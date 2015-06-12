@@ -441,6 +441,7 @@ public class Exchange implements ReadOnlyExchange {
       _tree = tree;
       _treeHolder = new ReentrantResourceHolder(_tree);
       _cachedTreeGeneration = -1;
+      _longRecordHelper = null;
       _isDirectoryExchange = tree == _volume.getDirectoryTree();
       initCache();
     }
