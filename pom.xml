@@ -41,16 +41,8 @@
     <version.animal-sniffer.plugin>1.11</version.animal-sniffer.plugin>
 
     <version.maven-license.plugin>2.6</version.maven-license.plugin>
-    <sonar.snapshotRepository.url>dav:https://dav.codehaus.org/snapshots.repository/sonar</sonar.snapshotRepository.url>
+    <sonar.snapshotRepository.url></sonar.snapshotRepository.url>
   </properties>
-
-  <distributionManagement>
-    <snapshotRepository>
-      <id>sonar-snapshots</id>
-      <url>${sonar.snapshotRepository.url}</url>
-      <uniqueVersion>false</uniqueVersion>
-    </snapshotRepository>
-  </distributionManagement>
 
   <dependencies>
     <dependency>
@@ -313,6 +305,7 @@
   </build>
   <scm>
     <connection>scm:git:https://github.com/SonarSource/sonar-persistit</connection>
+    <developerConnection>scm:git:git@github.com:SonarSource/sonar-persistit.git</developerConnection>
     <url>https://github.com/SonarSource/sonar-persistit</url>
   </scm>
   <developers>
