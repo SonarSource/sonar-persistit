@@ -4,7 +4,7 @@
 
   <groupId>org.sonarsource</groupId>
   <artifactId>sonar-persistit</artifactId>
-  <version>3.3.2-SNAPSHOT</version>
+  <version>3.3.2</version>
   <packaging>jar</packaging>
 
   <name>sonar-persistit</name>
@@ -54,7 +54,7 @@
     <version.animal-sniffer.plugin>1.11</version.animal-sniffer.plugin>
 
     <version.maven-license.plugin>2.6</version.maven-license.plugin>
-    <sonar.snapshotRepository.url></sonar.snapshotRepository.url>
+    <sonar.snapshotRepository.url />
   </properties>
 
   <dependencies>
