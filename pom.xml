@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.codehaus.sonar</groupId>
+  <groupId>org.sonarsource</groupId>
   <artifactId>sonar-persistit</artifactId>
   <version>3.3.2-SNAPSHOT</version>
   <packaging>jar</packaging>
@@ -45,11 +45,6 @@
   </properties>
 
   <distributionManagement>
-    <repository>
-      <id>codehaus-nexus-staging</id>
-      <name>Codehaus Release Repository</name>
-      <url>https://nexus.codehaus.org/service/local/staging/deploy/maven2/</url>
-    </repository>
     <snapshotRepository>
       <id>sonar-snapshots</id>
       <url>${sonar.snapshotRepository.url}</url>
@@ -175,12 +170,7 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
         <version>2.6</version>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-gpg-plugin</artifactId>
-        <version>1.4</version>
-      </plugin>      
+      </plugin>  
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>
@@ -377,20 +367,7 @@
                 </goals>
               </execution>
             </executions>
-          </plugin>
-	      <plugin>
-	        <groupId>org.apache.maven.plugins</groupId>
-	        <artifactId>maven-gpg-plugin</artifactId>
-	        <executions>
-	          <execution>
-	            <id>sign-artifacts</id>
-	            <phase>verify</phase>
-	            <goals>
-	              <goal>sign</goal>
-	            </goals>
-	          </execution>
-	        </executions>
-	      </plugin>           
+          </plugin>       
         </plugins>
       </build>
     </profile>
