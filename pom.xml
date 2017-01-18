@@ -21,6 +21,11 @@
     <version>38</version>
   </parent>
 
+  <issueManagement>
+    <system>jira</system>
+    <url>http://jira.sonarsource.com/browse/PERSIT</url>
+  </issueManagement>
+
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
