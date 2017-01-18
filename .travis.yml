@@ -3,10 +3,9 @@ sudo: false
 install: true
 
 jdk:
-  - oraclejdk7
+  - oraclejdk8
 
-script:
-  - mvn verify -B -e -V
+script: ./travis.sh
 
 cache:
   directories:
@@ -14,4 +13,6 @@ cache:
 
 notifications:
   email: false
-
+  webhooks:
+    - secure: "VnIlmle0Vd/wZLxyvcVdsplv/FZdsBJ2xKqRCBTSrNPV86LXUFY9rltYHmx3MBhnl+tgjOnOsH36rDX2gnBc+aJtlBEcVYHMLPcovFLIZUDJPSXO6NPYE0fWFkrNMLNB3/8JlE76yO9aIMQQBdvNg9B+nH7mbHeqQI2Q+r4HXHo="
+  on_start: always

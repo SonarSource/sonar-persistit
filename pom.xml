@@ -43,6 +43,8 @@
     <version.animal-sniffer.plugin>1.11</version.animal-sniffer.plugin>
 
     <version.maven-license.plugin>2.6</version.maven-license.plugin>
+    <!-- To deploy the Artifactory build with the name of the project-->
+    <gitRepositoryName>sonar-persistit</gitRepositoryName>
   </properties>
 
   <dependencies>
