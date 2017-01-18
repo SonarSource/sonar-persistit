@@ -15,6 +15,12 @@
     <url>http://www.sonarsource.com</url>
   </organization>
 
+  <parent>
+    <groupId>org.sonarsource.parent</groupId>
+    <artifactId>parent</artifactId>
+    <version>38</version>
+  </parent>
+
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
@@ -23,30 +29,13 @@
     </license>
   </licenses>
 
-  <distributionManagement>
-    <repository>
-      <id>bintray</id>
-      <url>https://api.bintray.com/maven/sonarsource/SonarQube/${project.artifactId}/;publish=1</url>
-    </repository>
-    <snapshotRepository>
-      <id>${sonar.snapshotRepository.id}</id>
-      <name>Sonar plugins snapshot repository</name>
-      <url>${sonar.snapshotRepository.url}</url>
-      <uniqueVersion>false</uniqueVersion>
-    </snapshotRepository>
-  </distributionManagement>
-
   <prerequisites>
     <!-- Note that "prerequisites" not inherited, but used by versions-maven-plugin 1.3.1 -->
     <maven>${maven.min.version}</maven>
   </prerequisites>
 
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-    <maven.min.version>3.0.5</maven.min.version>
     <jdk.min.version>1.6</jdk.min.version>
-
     <!-- To configure animal-sniffer to check API compat -->
     <animal-sniffer.signature.groupId>org.codehaus.mojo.signature</animal-sniffer.signature.groupId>
     <animal-sniffer.signature.artifactId>java16</animal-sniffer.signature.artifactId>
@@ -54,7 +43,6 @@
     <version.animal-sniffer.plugin>1.11</version.animal-sniffer.plugin>
 
     <version.maven-license.plugin>2.6</version.maven-license.plugin>
-    <sonar.snapshotRepository.url />
   </properties>
 
   <dependencies>
@@ -356,27 +344,4 @@
     </developer>
   </developers>
   <description>Java B+Tree Key-Value Store Library</description>
-
-  <profiles>
-    <profile>
-      <id>release</id>
-      <build>
-        <plugins>
-          <!-- Generates Javadoc -->
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>attach-javadocs</id>
-                <goals>
-                  <goal>jar</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
 </project>
