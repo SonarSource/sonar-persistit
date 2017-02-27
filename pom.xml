@@ -2,6 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <parent>
+    <groupId>org.sonarsource.parent</groupId>
+    <artifactId>parent</artifactId>
+    <version>39</version>
+  </parent>
+
   <groupId>org.sonarsource</groupId>
   <artifactId>sonar-persistit</artifactId>
   <version>3.3.3-SNAPSHOT</version>
@@ -15,12 +21,6 @@
     <name>SonarSource</name>
     <url>http://www.sonarsource.com</url>
   </organization>
-
-  <parent>
-    <groupId>org.sonarsource.parent</groupId>
-    <artifactId>parent</artifactId>
-    <version>39</version>
-  </parent>
 
   <issueManagement>
     <system>jira</system>
@@ -47,6 +47,9 @@
     <animal-sniffer.signature.artifactId>java16</animal-sniffer.signature.artifactId>
     <animal-sniffer.signature.version>1.1</animal-sniffer.signature.version>
     <version.animal-sniffer.plugin>1.11</version.animal-sniffer.plugin>
+
+    <!-- Default when JaCoCo is not used -->
+    <argLine></argLine>
 
     <version.maven-license.plugin>2.6</version.maven-license.plugin>
     <!-- To deploy the Artifactory build with the name of the project-->
@@ -170,7 +173,7 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <configuration>
-          <argLine>-Xmx640m -Xms128m -Drmiport=@{rmiport}</argLine>
+          <argLine>@{argLine} -Xmx640m -Xms128m -Drmiport=@{rmiport}</argLine>
           <includes>
             <include>**/*Test.java</include>
             <include>**/*Test?.java</include>
