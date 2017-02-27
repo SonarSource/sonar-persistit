@@ -8,6 +8,7 @@
   <packaging>jar</packaging>
 
   <name>sonar-persistit</name>
+  <description>Java B+Tree Key-Value Store Library</description>
   <inceptionYear>2005</inceptionYear>
   <url>http://github.com/SonarSource/sonar-persistit</url>
   <organization>
@@ -147,31 +148,6 @@
     </pluginManagement>
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-clean-plugin</artifactId>
-        <version>2.5</version>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-deploy-plugin</artifactId>
-        <version>2.8.1</version>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-install-plugin</artifactId>
-        <version>2.5.1</version>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>2.4</version>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-resources-plugin</artifactId>
-        <version>2.6</version>
-      </plugin>
-      <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>
         <version>1.8</version>
@@ -192,32 +168,9 @@
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.1</version>
-        <configuration>
-          <source>${jdk.min.version}</source>
-          <target>${jdk.min.version}</target>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-        <version>2.2.1</version>
-        <executions>
-          <execution>
-            <id>attach-sources</id>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.17</version>
         <configuration>
-          <argLine>-Xmx640m -Xms128m -Drmiport=${rmiport}</argLine>
+          <argLine>-Xmx640m -Xms128m -Drmiport=@{rmiport}</argLine>
           <includes>
             <include>**/*Test.java</include>
             <include>**/*Test?.java</include>
@@ -350,5 +303,4 @@
       <timezone>+1</timezone>
     </developer>
   </developers>
-  <description>Java B+Tree Key-Value Store Library</description>
 </project>
